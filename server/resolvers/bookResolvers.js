@@ -15,6 +15,14 @@ const resolvers = {
         .returning("*")
         .into("books");
       return book;
+    },
+    updateBook: async (root, { id, title, description, author }) => {
+      const updatedBook = await db("books")
+        .where({ id: id })
+        .update({ title, description, author })
+        .returning("*")
+        .into("books");
+      return updatedBook;
     }
   }
 };

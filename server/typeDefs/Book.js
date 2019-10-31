@@ -1,6 +1,7 @@
 const { gql } = require("apollo-server");
 const BookTypedefs = gql`
   type Book {
+    id: ID
     title: String
     description: String
     author: String
@@ -12,6 +13,12 @@ const BookTypedefs = gql`
 
   type Mutation {
     createBook(title: String, description: String, author: String): [Book]
+    updateBook(
+      id: Int
+      title: String
+      author: String
+      description: String
+    ): [Book]
   }
 `;
 
