@@ -18,11 +18,19 @@ const resolvers = {
     },
     updateBook: async (root, { id, title, description, author }) => {
       const updatedBook = await db("books")
-        .where({ id: id })
+        .where({ id })
         .update({ title, description, author })
         .returning("*")
         .into("books");
       return updatedBook;
+    },
+    deleteBook: async (root, { id }) => {
+      const deletedBook = await db("books")
+        .where({ id })
+        .del()
+        .returning("*")
+        .into("books");
+      return deletedBook;
     }
   }
 };

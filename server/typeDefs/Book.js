@@ -19,6 +19,7 @@ const BookTypedefs = gql`
       author: String
       description: String
     ): [Book]
+    deleteBook(id: Int): [Book]
   }
 `;
 
