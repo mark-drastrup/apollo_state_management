@@ -7,7 +7,7 @@ import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { HttpLink } from "apollo-link-http";
 import * as serviceWorker from "./serviceWorker";
-import {resolvers, typeDefs} from "./resolvers"
+import { resolvers, typeDefs } from "./resolvers";
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
@@ -21,11 +21,11 @@ const client = new ApolloClient({
   resolvers
 });
 
-cache.writeData({
+/* cache.writeData({
   data: {
-    books:[]
+    books: []
   }
-})
+}); */
 
 ReactDOM.render(
   <ApolloProvider client={client}>

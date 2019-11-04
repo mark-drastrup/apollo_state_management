@@ -1,4 +1,4 @@
-import gql from "graphql-tag"
+import gql from "graphql-tag";
 
 export const typeDefs = gql`
   extend type Query {
@@ -8,6 +8,6 @@ export const typeDefs = gql`
   extend type Mutation {
     createBook(title: String, author: String, description: String): [Book]
   }
-`
+`;
 
-export const resolvers = {}
+export const resolvers = {};
