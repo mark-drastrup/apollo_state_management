@@ -21,11 +21,12 @@ const client = new ApolloClient({
   resolvers
 });
 
-/* cache.writeData({
+cache.writeData({
   data: {
-    books: []
+    isLoggedIn: true,
+    showForm: false
   }
-}); */
+});
 
 ReactDOM.render(
   <ApolloProvider client={client}>
